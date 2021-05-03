@@ -1,0 +1,460 @@
+Component: ARM Compiler 5.06 update 7 (build 960) Tool: armlink [4d3601]
+
+==============================================================================
+
+Section Cross References
+
+    main.o(.text) refers to scheduler.o(.text) for Duty_Loop
+    main.o(.text) refers to main.o(.data) for Init_Finish
+    stm32f4xx_it.o(.text) refers to time.o(.text) for sys_time
+    stm32f4xx_it.o(.text) refers to pwm_in.o(.text) for _TIM3_IRQHandler
+    stm32f4xx_it.o(.text) refers to usart.o(.text) for Usart2_IRQ
+    stm32f4xx_it.o(.text) refers to time.o(.data) for sysTickUptime
+    scheduler.o(.text) refers to led.o(.text) for LED_1ms_DRV
+    scheduler.o(.text) refers to time.o(.text) for Get_Cycle_T
+    scheduler.o(.text) refers to data_transfer.o(.text) for ANO_DT_Data_Exchange
+    scheduler.o(.text) refers to mpu6050.o(.text) for MPU6050_Read
+    scheduler.o(.text) refers to imu.o(.text) for IMUupdate
+    scheduler.o(.text) refers to ctrl.o(.text) for CTRL_1
+    scheduler.o(.text) refers to rc.o(.text) for RC_Duty
+    scheduler.o(.text) refers to ak8975.o(.text) for ANO_AK8975_Read
+    scheduler.o(.text) refers to parameter.o(.text) for Parameter_Save
+    scheduler.o(.text) refers to fly_mode.o(.text) for mode_check
+    scheduler.o(.text) refers to ultrasonic.o(.text) for Ultra_Duty
+    scheduler.o(.text) refers to scheduler.o(.bss) for loop
+    scheduler.o(.text) refers to mpu6050.o(.bss) for mpu6050
+    scheduler.o(.text) refers to imu.o(.data) for Yaw
+    scheduler.o(.text) refers to pwm_in.o(.bss) for Rc_Pwm_In
+    scheduler.o(.text) refers to fly_mode.o(.bss) for mode_value
+    scheduler.o(.text) refers to rc.o(.bss) for CH_filter
+    scheduler.o(.text) refers to time.o(.data) for time_1ms
+    scheduler.o(.text) refers to scheduler.o(.data) for loop_cnt
+    init.o(.text) refers to misc.o(.text) for NVIC_PriorityGroupConfig
+    init.o(.text) refers to time.o(.text) for SysTick_Configuration
+    init.o(.text) refers to i2c_soft.o(.text) for I2c_Soft_Init
+    init.o(.text) refers to pwm_in.o(.text) for PWM_IN_Init
+    init.o(.text) refers to pwm_out.o(.text) for PWM_Out_Init
+    init.o(.text) refers to usbd_user_hid.o(.text) for Usb_Hid_Init
+    init.o(.text) refers to ms5611.o(.text) for MS5611_Init
+    init.o(.text) refers to mpu6050.o(.text) for MPU6050_Init
+    init.o(.text) refers to led.o(.text) for LED_Init
+    init.o(.text) refers to usart.o(.text) for Usart2_Init
+    init.o(.text) refers to parameter.o(.text) for Para_Init
+    init.o(.text) refers to ultrasonic.o(.text) for Ultrasonic_Init
+    init.o(.text) refers to ak8975.o(.text) for ANO_AK8975_Run
+    init.o(.text) refers to ak8975.o(.data) for ak8975_ok
+    init.o(.text) refers to mpu6050.o(.data) for mpu6050_ok
+    init.o(.text) refers to ms5611.o(.data) for ms5611_ok
+    parameter.o(.text) refers to ff.o(.text) for f_mount
+    parameter.o(.text) refers to ctrl.o(.text) for Ctrl_Para_Init
+    parameter.o(.text) refers to height_ctrl.o(.text) for h_pid_init
+    parameter.o(.text) refers to parameter.o(.bss) for fs
+    parameter.o(.text) refers to mpu6050.o(.bss) for mpu6050
+    parameter.o(.text) refers to ak8975.o(.data) for ak8975
+    parameter.o(.text) refers to ctrl.o(.bss) for ctrl_1
+    parameter.o(.text) refers to parameter.o(.data) for flash_init_error
+    parameter.o(.text) refers to data_transfer.o(.data) for flash_save_en_cnt
+    parameter.o(.text) refers to rc.o(.data) for fly_ready
+    ctrl.o(.text) refers to mymath.o(.text) for my_deathzoom
+    ctrl.o(.text) refers to f2d.o(.text) for __aeabi_f2d
+    ctrl.o(.text) refers to dmul.o(.text) for __aeabi_dmul
+    ctrl.o(.text) refers to dadd.o(.text) for __aeabi_dadd
+    ctrl.o(.text) refers to d2f.o(.text) for __aeabi_d2f
+    ctrl.o(.text) refers to ctrl.o(.bss) for ctrl_1
+    ctrl.o(.text) refers to rc.o(.bss) for CH_filter
+    ctrl.o(.text) refers to ctrl.o(.data) for Thr_Low
+    ctrl.o(.text) refers to imu.o(.data) for Yaw
+    ctrl.o(.text) refers to pwm_out.o(.text) for SetPwm
+    ctrl.o(.text) refers to rc.o(.data) for fly_ready
+    ctrl.o(.text) refers to height_ctrl.o(.text) for Height_Ctrl
+    ctrl.o(.text) refers to fly_mode.o(.bss) for mode_value
+    ctrl.o(.text) refers to mpu6050.o(.bss) for mpu6050
+    imu.o(.text) refers to mymath.o(.text) for my_sqrt
+    imu.o(.text) refers to filter.o(.text) for simple_3d_trans
+    imu.o(.text) refers to ak8975.o(.data) for ak8975
+    imu.o(.text) refers to imu.o(.data) for mag_norm_xyz
+    imu.o(.text) refers to imu.o(.bss) for mag_tmp
+    imu.o(.text) refers to rc.o(.data) for fly_ready
+    imu.o(.text) refers to f2d.o(.text) for __aeabi_f2d
+    imu.o(.text) refers to asin.o(i.__hardfp_asin) for __hardfp_asin
+    imu.o(.text) refers to dmul.o(.text) for __aeabi_dmul
+    imu.o(.text) refers to d2f.o(.text) for __aeabi_d2f
+    mymath.o(.text) refers to cdcmple.o(.text) for __aeabi_cdcmple
+    mymath.o(.text) refers to dmul.o(.text) for __aeabi_dmul
+    mymath.o(.text) refers to dadd.o(.text) for __aeabi_dadd
+    mymath.o(.text) refers to cdrcmple.o(.text) for __aeabi_cdrcmple
+    mymath.o(.text) refers to dflti.o(.text) for __aeabi_i2d
+    mymath.o(.text) refers to d2f.o(.text) for __aeabi_d2f
+    mymath.o(.text) refers to mymath.o(.data) for fast_atan_table
+    data_transfer.o(.text) refers to usbd_user_hid.o(.text) for Usb_Hid_Adddata
+    data_transfer.o(.text) refers to usart.o(.text) for Usart2_Send
+    data_transfer.o(.text) refers to data_transfer.o(.bss) for data_to_send
+    data_transfer.o(.text) refers to anotc_baro_ctrl.o(.bss) for baro_p
+    data_transfer.o(.text) refers to anotc_baro_ctrl.o(.data) for wz_speed
+    data_transfer.o(.text) refers to ultrasonic.o(.bss) for ultra
+    data_transfer.o(.text) refers to imu.o(.bss) for reference_v
+    data_transfer.o(.text) refers to data_transfer.o(.data) for cnt
+    data_transfer.o(.text) refers to rc.o(.data) for fly_ready
+    data_transfer.o(.text) refers to imu.o(.data) for Yaw
+    data_transfer.o(.text) refers to ak8975.o(.data) for ak8975
+    data_transfer.o(.text) refers to mpu6050.o(.bss) for mpu6050
+    data_transfer.o(.text) refers to parameter.o(.text) for Para_ResetToFactorySetup
+    data_transfer.o(.text) refers to rc.o(.text) for Feed_Rc_Dog
+    data_transfer.o(.text) refers to ms5611.o(.bss) for baro
+    data_transfer.o(.text) refers to rc.o(.bss) for CH
+    data_transfer.o(.text) refers to ctrl.o(.data) for motor_out
+    data_transfer.o(.text) refers to ctrl.o(.bss) for ctrl_1
+    data_transfer.o(.text) refers to parameter.o(.bss) for pid_setup
+    data_transfer.o(.text) refers to dflti.o(.text) for __aeabi_i2d
+    data_transfer.o(.text) refers to dmul.o(.text) for __aeabi_dmul
+    data_transfer.o(.text) refers to d2f.o(.text) for __aeabi_d2f
+    rc.o(.text) refers to rc.o(.data) for CH_in_Mapping
+    rc.o(.text) refers to rc.o(.bss) for CH_filter
+    rc.o(.text) refers to mpu6050.o(.bss) for mpu6050
+    rc.o(.text) refers to imu.o(.data) for acc_ng_cali
+    rc.o(.text) refers to ak8975.o(.data) for Mag_CALIBRATED
+    rc.o(.text) refers to data_transfer.o(.bss) for RX_CH
+    rc.o(.text) refers to anotc_baro_ctrl.o(.data) for wz_speed
+    usb_config.o(.text) refers to usbd_hid.o(.text) for USBD_HID_Configure_Event
+    usb_config.o(.constdata) refers to usb_config.o(.text) for USBD_SOF_Event
+    usb_config.o(.constdata) refers to usbd_core.o(.text) for USBD_EndPoint0
+    usb_config.o(.constdata) refers to usbd_hid.o(.text) for USBD_HID_EP_INT_Event
+    usbd_user_hid.o(.text) refers to usbd_core.o(.text) for usbd_init
+    usbd_user_hid.o(.text) refers to usbd_hid.o(.text) for usbd_hid_get_report_trigger
+    usbd_user_hid.o(.text) refers to data_transfer.o(.text) for ANO_DT_Data_Receive_Prepare
+    usbd_user_hid.o(.text) refers to usbd_user_hid.o(.data) for hid_datatemp_end
+    usbd_user_hid.o(.text) refers to usbd_user_hid.o(.bss) for hid_datatemp
+    version.o(.text) refers to strlen.o(.text) for strlen
+    version.o(.text) refers to version.o(.bss) for string_auth
+    version.o(.data) refers to version.o(.conststring) for .conststring
+    filter.o(.text) refers to mymath.o(.text) for my_sqrt
+    filter.o(.text) refers to filter.o(.data) for h_tmp_x
+    height_ctrl.o(.text) refers to mymath.o(.text) for my_deathzoom
+    height_ctrl.o(.text) refers to height_ctrl.o(.bss) for hc_value
+    height_ctrl.o(.text) refers to height_ctrl.o(.data) for height_ref
+    height_ctrl.o(.text) refers to ctrl.o(.data) for Thr_Low
+    height_ctrl.o(.text) refers to rc.o(.data) for fly_ready
+    height_ctrl.o(.text) refers to fly_mode.o(.bss) for mode_value
+    height_ctrl.o(.text) refers to parameter.o(.bss) for pid_setup
+    height_ctrl.o(.text) refers to anotc_baro_ctrl.o(.text) for baro_ctrl
+    height_ctrl.o(.text) refers to pid.o(.text) for PID_calculate
+    height_ctrl.o(.text) refers to imu.o(.bss) for reference_v
+    fly_mode.o(.text) refers to fly_mode.o(.data) for mode_state
+    anotc_baro_ctrl.o(.text) refers to mymath.o(.text) for my_sqrt
+    anotc_baro_ctrl.o(.text) refers to filter.o(.text) for Moving_Average
+    anotc_baro_ctrl.o(.text) refers to ms5611.o(.text) for MS5611_Update
+    anotc_baro_ctrl.o(.text) refers to anotc_baro_ctrl.o(.data) for com_tar
+    anotc_baro_ctrl.o(.text) refers to ms5611.o(.bss) for baro
+    anotc_baro_ctrl.o(.text) refers to imu.o(.bss) for reference_v
+    anotc_baro_ctrl.o(.text) refers to anotc_baro_ctrl.o(.bss) for sonar
+    anotc_baro_ctrl.o(.text) refers to ultrasonic.o(.bss) for ultra
+    anotc_baro_ctrl.o(.text) refers to fly_mode.o(.data) for mode_state
+    ano_of.o(.text) refers to dflti.o(.text) for __aeabi_i2d
+    ano_of.o(.text) refers to dmul.o(.text) for __aeabi_dmul
+    ano_of.o(.text) refers to d2f.o(.text) for __aeabi_d2f
+    ano_of.o(.text) refers to ano_of.o(.data) for OF_QUA
+    ano_of.o(.text) refers to ano_of.o(.bss) for _datatemp
+    time.o(.text) refers to stm32f4xx_rcc.o(.text) for RCC_APB1PeriphClockCmd
+    time.o(.text) refers to stm32f4xx_tim.o(.text) for TIM_DeInit
+    time.o(.text) refers to misc.o(.text) for NVIC_Init
+    time.o(.text) refers to scheduler.o(.text) for Loop_check
+    time.o(.text) refers to time.o(.data) for sysTickUptime
+    time.o(.text) refers to main.o(.data) for Init_Finish
+    time.o(.text) refers to time.o(.bss) for Cycle_T
+    pwm_in.o(.text) refers to stm32f4xx_rcc.o(.text) for RCC_APB1PeriphClockCmd
+    pwm_in.o(.text) refers to misc.o(.text) for NVIC_Init
+    pwm_in.o(.text) refers to stm32f4xx_gpio.o(.text) for GPIO_Init
+    pwm_in.o(.text) refers to stm32f4xx_tim.o(.text) for TIM_ICInit
+    pwm_in.o(.text) refers to rc.o(.text) for Feed_Rc_Dog
+    pwm_in.o(.text) refers to pwm_in.o(.data) for temp_cnt1
+    pwm_in.o(.text) refers to pwm_in.o(.bss) for Rc_Pwm_In
+    pwm_out.o(.text) refers to stm32f4xx_tim.o(.text) for TIM_TimeBaseStructInit
+    pwm_out.o(.text) refers to stm32f4xx_rcc.o(.text) for RCC_APB1PeriphClockCmd
+    pwm_out.o(.text) refers to stm32f4xx_gpio.o(.text) for GPIO_Init
+    pwm_out.o(.text) refers to system_stm32f4xx.o(.data) for SystemCoreClock
+    pwm_out.o(.text) refers to pwm_out.o(.data) for CH_out_Mapping
+    i2c_soft.o(.text) refers to stm32f4xx_rcc.o(.text) for RCC_AHB1PeriphClockCmd
+    i2c_soft.o(.text) refers to stm32f4xx_gpio.o(.text) for GPIO_Init
+    i2c_soft.o(.text) refers to i2c_soft.o(.data) for I2C_FastMode
+    mpu6050.o(.text) refers to i2c_soft.o(.text) for IIC_Read_nByte
+    mpu6050.o(.text) refers to stm32f4xx_rcc.o(.text) for RCC_AHB1PeriphClockCmd
+    mpu6050.o(.text) refers to stm32f4xx_gpio.o(.text) for GPIO_Init
+    mpu6050.o(.text) refers to time.o(.text) for Delay_ms
+    mpu6050.o(.text) refers to mymath.o(.text) for my_sqrt
+    mpu6050.o(.text) refers to parameter.o(.text) for Param_SaveAccelOffset
+    mpu6050.o(.text) refers to i2c_soft.o(.data) for I2C_FastMode
+    mpu6050.o(.text) refers to mpu6050.o(.bss) for mpu6050_buffer
+    mpu6050.o(.text) refers to mpu6050.o(.data) for mpu6050_ok
+    mpu6050.o(.text) refers to parameter.o(.bss) for sensor_setup
+    mpu6050.o(.text) refers to data_transfer.o(.bss) for f
+    mpu6050.o(.text) refers to memseta.o(.text) for __aeabi_memclr4
+    ak8975.o(.text) refers to i2c_soft.o(.text) for IIC_Write_1Byte
+    ak8975.o(.text) refers to parameter.o(.text) for Param_SaveMagOffset
+    ak8975.o(.text) refers to ak8975.o(.data) for Mag_CALIBRATED
+    ak8975.o(.text) refers to ak8975.o(.bss) for MagSum
+    ak8975.o(.text) refers to data_transfer.o(.bss) for f
+    ak8975.o(.text) refers to i2c_soft.o(.data) for I2C_FastMode
+    led.o(.text) refers to stm32f4xx_rcc.o(.text) for RCC_AHB1PeriphClockCmd
+    led.o(.text) refers to stm32f4xx_gpio.o(.text) for GPIO_Init
+    led.o(.text) refers to time.o(.text) for Delay_ms
+    led.o(.text) refers to led.o(.data) for led_cnt
+    led.o(.text) refers to ak8975.o(.data) for Mag_CALIBRATED
+    led.o(.text) refers to fly_mode.o(.data) for mode_state
+    led.o(.text) refers to rc.o(.data) for fly_ready
+    ms5611.o(.text) refers to i2c_soft.o(.text) for IIC_Write_1Byte
+    ms5611.o(.text) refers to time.o(.text) for Delay_ms
+    ms5611.o(.text) refers to filter.o(.text) for Moving_Median
+    ms5611.o(.text) refers to ms5611.o(.bss) for ms5611_prom
+    ms5611.o(.text) refers to ms5611.o(.data) for t_rxbuf
+    usart.o(.text) refers to stm32f4xx_rcc.o(.text) for RCC_APB1PeriphClockCmd
+    usart.o(.text) refers to misc.o(.text) for NVIC_Init
+    usart.o(.text) refers to stm32f4xx_gpio.o(.text) for GPIO_PinAFConfig
+    usart.o(.text) refers to stm32f4xx_usart.o(.text) for USART_Init
+    usart.o(.text) refers to data_transfer.o(.text) for ANO_DT_Data_Receive_Prepare
+    usart.o(.text) refers to ultrasonic.o(.text) for Ultra_Get
+    usart.o(.text) refers to ano_of.o(.text) for AnoOF_GetOneByte
+    usart.o(.text) refers to usart.o(.data) for TxCounter
+    usart.o(.text) refers to usart.o(.bss) for TxBuffer
+    usbd_stm32f4xx_fs.o(.text) refers to system_stm32f4xx.o(.data) for SystemCoreClock
+    usbd_stm32f4xx_fs.o(.text) refers to usb_config.o(.constdata) for USBD_P_SOF_Event
+    usbd_stm32f4xx_fs.o(.text) refers to usbd_stm32f4xx_fs.o(.data) for SyncWriteEP
+    usbd_stm32f4xx_fs.o(.text) refers to usbd_core.o(.text) for usbd_reset_core
+    usbd_stm32f4xx_fs.o(.text) refers to usbd_stm32f4xx_fs.o(.bss) for IsoOutPacketDataCnt
+    usbd_stm32f4xx_fs.o(.data) refers to usbd_stm32f4xx_fs.o(.bss) for HID_IntInPacketData
+    drv_w25qxx.o(.text) refers to stm32f4xx_spi.o(.text) for SPI_I2S_GetFlagStatus
+    drv_w25qxx.o(.text) refers to stm32f4xx_gpio.o(.text) for GPIO_WriteBit
+    drv_w25qxx.o(.text) refers to stm32f4xx_rcc.o(.text) for RCC_AHB1PeriphClockCmd
+    drv_w25qxx.o(.text) refers to drv_w25qxx.o(.bss) for flash_info
+    ultrasonic.o(.text) refers to usart.o(.text) for Uart5_Init
+    ultrasonic.o(.text) refers to ultrasonic.o(.bss) for ultra
+    ultrasonic.o(.text) refers to ultrasonic.o(.data) for ultra_start_f
+    misc.o(.text) refers to main.o(.text) for assert_failed
+    stm32f4xx_adc.o(.text) refers to stm32f4xx_rcc.o(.text) for RCC_APB2PeriphResetCmd
+    stm32f4xx_adc.o(.text) refers to main.o(.text) for assert_failed
+    stm32f4xx_dbgmcu.o(.text) refers to main.o(.text) for assert_failed
+    stm32f4xx_dma.o(.text) refers to main.o(.text) for assert_failed
+    stm32f4xx_exti.o(.text) refers to main.o(.text) for assert_failed
+    stm32f4xx_flash.o(.text) refers to main.o(.text) for assert_failed
+    stm32f4xx_gpio.o(.text) refers to main.o(.text) for assert_failed
+    stm32f4xx_gpio.o(.text) refers to stm32f4xx_rcc.o(.text) for RCC_AHB1PeriphResetCmd
+    stm32f4xx_i2c.o(.text) refers to main.o(.text) for assert_failed
+    stm32f4xx_i2c.o(.text) refers to stm32f4xx_rcc.o(.text) for RCC_APB1PeriphResetCmd
+    stm32f4xx_pwr.o(.text) refers to stm32f4xx_rcc.o(.text) for RCC_APB1PeriphResetCmd
+    stm32f4xx_pwr.o(.text) refers to main.o(.text) for assert_failed
+    stm32f4xx_rcc.o(.text) refers to main.o(.text) for assert_failed
+    stm32f4xx_rcc.o(.text) refers to stm32f4xx_rcc.o(.data) for APBAHBPrescTable
+    stm32f4xx_spi.o(.text) refers to main.o(.text) for assert_failed
+    stm32f4xx_spi.o(.text) refers to stm32f4xx_rcc.o(.text) for RCC_APB2PeriphResetCmd
+    stm32f4xx_syscfg.o(.text) refers to stm32f4xx_rcc.o(.text) for RCC_APB2PeriphResetCmd
+    stm32f4xx_syscfg.o(.text) refers to main.o(.text) for assert_failed
+    stm32f4xx_tim.o(.text) refers to main.o(.text) for assert_failed
+    stm32f4xx_tim.o(.text) refers to stm32f4xx_rcc.o(.text) for RCC_APB2PeriphResetCmd
+    stm32f4xx_usart.o(.text) refers to main.o(.text) for assert_failed
+    stm32f4xx_usart.o(.text) refers to stm32f4xx_rcc.o(.text) for RCC_APB2PeriphResetCmd
+    system_stm32f4xx.o(.text) refers to system_stm32f4xx.o(.data) for SystemCoreClock
+    startup_stm32f4xx.o(RESET) refers to startup_stm32f4xx.o(STACK) for __initial_sp
+    startup_stm32f4xx.o(RESET) refers to startup_stm32f4xx.o(.text) for Reset_Handler
+    startup_stm32f4xx.o(RESET) refers to stm32f4xx_it.o(.text) for NMI_Handler
+    startup_stm32f4xx.o(RESET) refers to usbd_stm32f4xx_fs.o(.text) for OTG_FS_IRQHandler
+    startup_stm32f4xx.o(.text) refers to system_stm32f4xx.o(.text) for SystemInit
+    startup_stm32f4xx.o(.text) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    usbd_core.o(.text) refers to usb_config.o(.text) for usbd_class_init
+    usbd_core.o(.text) refers to usbd_stm32f4xx_fs.o(.text) for USBD_Init
+    usbd_core.o(.text) refers to version.o(.text) for get_uid_string_interface
+    usbd_core.o(.text) refers to usbd_core_hid.o(.text) for USBD_ReqGetDescriptor_HID
+    usbd_core.o(.text) refers to usbd_core.o(.data) for USBD_HighSpeed
+    usbd_core.o(.text) refers to usb_config.o(.constdata) for usbd_power
+    usbd_core.o(.text) refers to usb_config.o(.bss) for USBD_EP0Buf
+    usbd_core.o(.text) refers to usb_config.o(.data) for USBD_AltSetting
+    usbd_core_hid.o(.text) refers to usbd_hid.o(.text) for USBD_HID_GetReport
+    usbd_core_hid.o(.text) refers to usbd_core.o(.text) for USBD_DataInStage
+    usbd_core_hid.o(.text) refers to usbd_core.o(.data) for USBD_SetupPacket
+    usbd_core_hid.o(.text) refers to usb_config.o(.constdata) for usbd_hid_if_num
+    usbd_core_hid.o(.text) refers to usb_config.o(.bss) for USBD_HID_InReport
+    usbd_core_hid.o(.text) refers to usb_config.o(.data) for USBD_HID_FeatReport
+    usbd_hid.o(.text) refers to usbd_user_hid.o(.text) for usbd_hid_get_report
+    usbd_hid.o(.text) refers to usbd_stm32f4xx_fs.o(.text) for USBD_WriteEP
+    usbd_hid.o(.text) refers to usbd_core.o(.data) for USBD_SetupPacket
+    usbd_hid.o(.text) refers to usb_config.o(.bss) for USBD_HID_InReport
+    usbd_hid.o(.text) refers to usb_config.o(.data) for USBD_HID_FeatReport
+    usbd_hid.o(.text) refers to usb_config.o(.constdata) for usbd_hid_inreport_num
+    usbd_hid.o(.text) refers to usbd_hid.o(.data) for DataOutSentLen
+    usbd_hid.o(.text) refers to memcpya.o(.text) for __aeabi_memcpy
+    diskio.o(.text) refers to drv_w25qxx.o(.text) for Flash_GetInfo
+    diskio.o(.text) refers to diskio.o(.data) for flash_info
+    ff.o(.text) refers to diskio.o(.text) for disk_write
+    ff.o(.text) refers to ff.o(.data) for FatFs
+    ff.o(.text) refers to ff.o(.constdata) for vst
+    asin.o(i.__hardfp_asin) refers (Special) to iusefp.o(.text) for __I$use$fp
+    asin.o(i.__hardfp_asin) refers to dunder.o(i.__mathlib_dbl_infnan) for __mathlib_dbl_infnan
+    asin.o(i.__hardfp_asin) refers to dmul.o(.text) for __aeabi_dmul
+    asin.o(i.__hardfp_asin) refers to dadd.o(.text) for __aeabi_dadd
+    asin.o(i.__hardfp_asin) refers to errno.o(i.__set_errno) for __set_errno
+    asin.o(i.__hardfp_asin) refers to dunder.o(i.__mathlib_dbl_invalid) for __mathlib_dbl_invalid
+    asin.o(i.__hardfp_asin) refers to fpclassify.o(i.__ARM_fpclassify) for __ARM_fpclassify
+    asin.o(i.__hardfp_asin) refers to dunder.o(i.__mathlib_dbl_underflow) for __mathlib_dbl_underflow
+    asin.o(i.__hardfp_asin) refers to poly.o(i.__kernel_poly) for __kernel_poly
+    asin.o(i.__hardfp_asin) refers to ddiv.o(.text) for __aeabi_ddiv
+    asin.o(i.__hardfp_asin) refers to fabs.o(i.fabs) for fabs
+    asin.o(i.__hardfp_asin) refers to sqrt.o(i.sqrt) for sqrt
+    asin.o(i.__hardfp_asin) refers to asin.o(.constdata) for .constdata
+    asin.o(i.__softfp_asin) refers (Special) to iusefp.o(.text) for __I$use$fp
+    asin.o(i.__softfp_asin) refers to asin.o(i.__hardfp_asin) for __hardfp_asin
+    asin.o(i.asin) refers (Special) to iusefp.o(.text) for __I$use$fp
+    asin.o(i.asin) refers to asin.o(i.__hardfp_asin) for __hardfp_asin
+    asin.o(.constdata) refers (Special) to iusefp.o(.text) for __I$use$fp
+    asin_x.o(i.____hardfp_asin$lsc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    asin_x.o(i.____hardfp_asin$lsc) refers to dunder.o(i.__mathlib_dbl_infnan) for __mathlib_dbl_infnan
+    asin_x.o(i.____hardfp_asin$lsc) refers to dmul.o(.text) for __aeabi_dmul
+    asin_x.o(i.____hardfp_asin$lsc) refers to dadd.o(.text) for __aeabi_dadd
+    asin_x.o(i.____hardfp_asin$lsc) refers to errno.o(i.__set_errno) for __set_errno
+    asin_x.o(i.____hardfp_asin$lsc) refers to poly.o(i.__kernel_poly) for __kernel_poly
+    asin_x.o(i.____hardfp_asin$lsc) refers to ddiv.o(.text) for __aeabi_ddiv
+    asin_x.o(i.____hardfp_asin$lsc) refers to fabs.o(i.fabs) for fabs
+    asin_x.o(i.____hardfp_asin$lsc) refers to sqrt.o(i.sqrt) for sqrt
+    asin_x.o(i.____hardfp_asin$lsc) refers to asin_x.o(.constdata) for .constdata
+    asin_x.o(i.____softfp_asin$lsc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    asin_x.o(i.____softfp_asin$lsc) refers to asin_x.o(i.____hardfp_asin$lsc) for ____hardfp_asin$lsc
+    asin_x.o(i.__asin$lsc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    asin_x.o(i.__asin$lsc) refers to asin_x.o(i.____hardfp_asin$lsc) for ____hardfp_asin$lsc
+    asin_x.o(.constdata) refers (Special) to iusefp.o(.text) for __I$use$fp
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry10a.o(.ARM.Collect$$$$0000000F) for __rt_final_cpp
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry11a.o(.ARM.Collect$$$$00000011) for __rt_final_exit
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry12b.o(.ARM.Collect$$$$0000000E) for __rt_lib_shutdown_fini
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry7b.o(.ARM.Collect$$$$00000008) for _main_clock
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry8b.o(.ARM.Collect$$$$0000000A) for _main_cpp_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry9a.o(.ARM.Collect$$$$0000000B) for _main_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry5.o(.ARM.Collect$$$$00000004) for _main_scatterload
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry2.o(.ARM.Collect$$$$00000001) for _main_stk
+    dadd.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dadd.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+    dadd.o(.text) refers to llsshr.o(.text) for __aeabi_lasr
+    dadd.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    dmul.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dmul.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    dflti.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dflti.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    f2d.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    cdcmple.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    cdrcmple.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    d2f.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    d2f.o(.text) refers to fepilogue.o(.text) for _float_round
+    dunder.o(i.__mathlib_dbl_divzero) refers to ddiv.o(.text) for __aeabi_ddiv
+    dunder.o(i.__mathlib_dbl_infnan) refers to dadd.o(.text) for __aeabi_dadd
+    dunder.o(i.__mathlib_dbl_infnan2) refers to dadd.o(.text) for __aeabi_dadd
+    dunder.o(i.__mathlib_dbl_invalid) refers to ddiv.o(.text) for __aeabi_ddiv
+    dunder.o(i.__mathlib_dbl_overflow) refers to dmul.o(.text) for __aeabi_dmul
+    dunder.o(i.__mathlib_dbl_posinfnan) refers to dmul.o(.text) for __aeabi_dmul
+    dunder.o(i.__mathlib_dbl_underflow) refers to dmul.o(.text) for __aeabi_dmul
+    fabs.o(i.__hardfp_fabs) refers (Special) to iusefp.o(.text) for __I$use$fp
+    fabs.o(i.__softfp_fabs) refers (Special) to iusefp.o(.text) for __I$use$fp
+    fabs.o(i.fabs) refers (Special) to iusefp.o(.text) for __I$use$fp
+    fpclassify.o(i.__ARM_fpclassify) refers (Special) to iusefp.o(.text) for __I$use$fp
+    poly.o(i.__kernel_poly) refers (Special) to iusefp.o(.text) for __I$use$fp
+    poly.o(i.__kernel_poly) refers to dmul.o(.text) for __aeabi_dmul
+    poly.o(i.__kernel_poly) refers to dadd.o(.text) for __aeabi_dadd
+    sqrt.o(i.__hardfp_sqrt) refers (Special) to iusefp.o(.text) for __I$use$fp
+    sqrt.o(i.__hardfp_sqrt) refers to dsqrt.o(.text) for _dsqrt
+    sqrt.o(i.__hardfp_sqrt) refers to errno.o(i.__set_errno) for __set_errno
+    sqrt.o(i.__softfp_sqrt) refers (Special) to iusefp.o(.text) for __I$use$fp
+    sqrt.o(i.__softfp_sqrt) refers to dsqrt.o(.text) for _dsqrt
+    sqrt.o(i.__softfp_sqrt) refers to errno.o(i.__set_errno) for __set_errno
+    sqrt.o(i.sqrt) refers (Special) to iusefp.o(.text) for __I$use$fp
+    sqrt.o(i.sqrt) refers to dsqrt.o(.text) for _dsqrt
+    sqrt.o(i.sqrt) refers to errno.o(i.__set_errno) for __set_errno
+    sqrt_x.o(i.____hardfp_sqrt$lsc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    sqrt_x.o(i.____hardfp_sqrt$lsc) refers to cdcmple.o(.text) for __aeabi_cdcmple
+    sqrt_x.o(i.____hardfp_sqrt$lsc) refers to errno.o(i.__set_errno) for __set_errno
+    sqrt_x.o(i.____hardfp_sqrt$lsc) refers to dsqrt.o(.text) for _dsqrt
+    sqrt_x.o(i.____softfp_sqrt$lsc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    sqrt_x.o(i.____softfp_sqrt$lsc) refers to cdcmple.o(.text) for __aeabi_cdcmple
+    sqrt_x.o(i.____softfp_sqrt$lsc) refers to errno.o(i.__set_errno) for __set_errno
+    sqrt_x.o(i.____softfp_sqrt$lsc) refers to dsqrt.o(.text) for _dsqrt
+    sqrt_x.o(i.__sqrt$lsc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    sqrt_x.o(i.__sqrt$lsc) refers to cdcmple.o(.text) for __aeabi_cdcmple
+    sqrt_x.o(i.__sqrt$lsc) refers to errno.o(i.__set_errno) for __set_errno
+    sqrt_x.o(i.__sqrt$lsc) refers to dsqrt.o(.text) for _dsqrt
+    entry2.o(.ARM.Collect$$$$00000001) refers to entry2.o(.ARM.Collect$$$$00002712) for __lit__00000000
+    entry2.o(.ARM.Collect$$$$00002712) refers to startup_stm32f4xx.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to startup_stm32f4xx.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    entry5.o(.ARM.Collect$$$$00000004) refers to init.o(.text) for __scatterload
+    entry9a.o(.ARM.Collect$$$$0000000B) refers to main.o(.text) for main
+    entry9b.o(.ARM.Collect$$$$0000000C) refers to main.o(.text) for main
+    errno.o(i.__aeabi_errno_addr) refers to errno.o(.data) for .data
+    errno.o(i.__read_errno) refers to errno.o(.data) for .data
+    errno.o(i.__set_errno) refers to errno.o(.data) for .data
+    depilogue.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+    depilogue.o(.text) refers to llushr.o(.text) for __aeabi_llsr
+    ddiv.o(.text) refers to depilogue.o(.text) for _double_round
+    init.o(.text) refers to entry5.o(.ARM.Collect$$$$00000004) for __main_after_scatterload
+    dsqrt.o(.text) refers to llushr.o(.text) for __aeabi_llsr
+    dsqrt.o(.text) refers to depilogue.o(.text) for _double_round
+
+
+==============================================================================
+
+Removing Unused input sections from the image.
+
+    Removing main.o(.emb_text), (8 bytes).
+    Removing stm32f4xx_it.o(.emb_text), (8 bytes).
+    Removing scheduler.o(.emb_text), (8 bytes).
+    Removing init.o(.emb_text), (8 bytes).
+    Removing init.o(.text), (160 bytes).
+    Removing parameter.o(.emb_text), (8 bytes).
+    Removing ctrl.o(.emb_text), (8 bytes).
+    Removing imu.o(.emb_text), (8 bytes).
+    Removing mymath.o(.emb_text), (8 bytes).
+    Removing data_transfer.o(.emb_text), (8 bytes).
+    Removing rc.o(.emb_text), (8 bytes).
+    Removing usbd_user_hid.o(.emb_text), (8 bytes).
+    Removing version.o(.constdata), (9 bytes).
+    Removing version.o(.conststring), (5 bytes).
+    Removing version.o(.data), (4 bytes).
+    Removing filter.o(.emb_text), (8 bytes).
+    Removing height_ctrl.o(.emb_text), (8 bytes).
+    Removing fly_mode.o(.emb_text), (8 bytes).
+    Removing anotc_baro_ctrl.o(.emb_text), (8 bytes).
+    Removing pid.o(.emb_text), (8 bytes).
+    Removing ano_of.o(.emb_text), (8 bytes).
+    Removing time.o(.emb_text), (8 bytes).
+    Removing pwm_in.o(.emb_text), (8 bytes).
+    Removing pwm_out.o(.emb_text), (8 bytes).
+    Removing i2c_soft.o(.emb_text), (8 bytes).
+    Removing mpu6050.o(.emb_text), (8 bytes).
+    Removing ak8975.o(.emb_text), (8 bytes).
+    Removing led.o(.emb_text), (8 bytes).
+    Removing ms5611.o(.emb_text), (8 bytes).
+    Removing usart.o(.emb_text), (8 bytes).
+    Removing usbd_stm32f4xx_fs.o(.emb_text), (8 bytes).
+    Removing drv_w25qxx.o(.emb_text), (8 bytes).
+    Removing ultrasonic.o(.emb_text), (8 bytes).
+    Removing misc.o(.emb_text), (8 bytes).
+    Removing stm32f4xx_adc.o(.emb_text), (8 bytes).
+    Removing stm32f4xx_adc.o(.text), (4220 bytes).
+    Removing stm32f4xx_dbgmcu.o(.emb_text), (8 bytes).
+    Removing stm32f4xx_dbgmcu.o(.text), (288 bytes).
+    Removing stm32f4xx_dma.o(.emb_text), (8 bytes).
+    Removing stm32f4xx_dma.o(.text), (5068 bytes).
+    Removing stm32f4xx_exti.o(.emb_text), (8 bytes).
+    Removing stm32f4xx_exti.o(.text), (780 bytes).
+    Removing stm32f4xx_flash.o(.emb_text), (8 bytes).
+    Removing stm32f4xx_flash.o(.text), (1944 bytes).
+    Removing stm32f4xx_gpio.o(.emb_text), (8 bytes).
+    Removing stm32f4xx_i2c.o(.emb_text), (8 bytes).
+    Removing stm32f4xx_i2c.o(.text), (3496 bytes).
+    Removing stm32f4xx_pwr.o(.emb_text), (8 bytes).
+    Removing stm32f4xx_pwr.o(.text), (580 bytes).
+    Removing stm32f4xx_rcc.o(.emb_text), (8 bytes).
+    Removing stm32f4xx_spi.o(.emb_text), (8 bytes).
+    Removing stm32f4xx_syscfg.o(.emb_text), (8 bytes).
+    Removing stm32f4xx_syscfg.o(.text), (388 bytes).
+    Removing stm32f4xx_tim.o(.emb_text), (8 bytes).
+    Removing stm32f4xx_usart.o(.emb_text), (8 bytes).
+    Removing system_stm32f4xx.o(.emb_text), (8 bytes).
+    Removing startup_stm32f4xx.o(HEAP), (1024 bytes).
+    Removing usbd_core.o(.emb_text), (0 bytes).
+    Removing diskio.o(.emb_text), (8 bytes).
+    Removing dneg.o(.text), (6 bytes).
+
+60 unused section(s) (total 18332 bytes) removed from the image.
